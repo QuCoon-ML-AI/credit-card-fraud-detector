@@ -3,8 +3,6 @@
 ## Overview
 This post provides a detailed description of the Credit Card Fraud Detector project, including its purpose, the machine learning models used, and a comprehensive overview of the solution. The project aims to identify fraudulent credit card transactions using advanced machine learning techniques.
 
-![image](https://github.com/user-attachments/assets/93cacabc-1411-4e01-a005-5c3e9e56f0a3)
-
 ## Project Definition and Scope
 In this solution, we build the core of a credit card fraud detection system using SageMaker. We start by training an unsupervised anomaly detection algorithm, Random Cut Forest (RCF), and then proceed to train two XGBoost models for supervised training. To deal with the highly imbalanced data common in fraud detection, our first model uses XGBoost's weighting schema, and the second uses a re-sampling technique, SMOTE, for oversampling the rare fraudulent examples. Lastly, we train an optimal XGBoost model with Hyper-parameter Optimization (HPO) to further improve model performance.
 
@@ -31,7 +29,28 @@ To address imbalanced problems, we use the Synthetic Minority Over-sampling Tech
 We further improve model performance using Hyper-parameter Optimization (HPO). The HPO process selects an optimal model based on performance on validation data. We prepare the input data in CSV format, combine the target variable with feature variables, and upload them to S3 buckets for training.
 
 ### Stage VI: Evaluate and Compare All Model Performances
-We evaluate and compare the performances of all models on the same test data using metrics like balanced accuracy, Cohen's Kappa score, F1 score, and ROC_AUC.
+We evaluate and compare the performances of all models. This step is critical to ensure the effectiveness of the fraud detection system, as it directly impacts both the security and customer experience.
+
+#### False Negatives
+- **Definition**: Transactions that are fraudulent but are incorrectly classified as legitimate.
+- **Impact**: The primary concern here is the system's inability to spot new fraud patterns soon enough. This can lead to financial losses and undermine the trust in the detection system.
+- **Considerations**: Minimizing false negatives is crucial to ensure that fraudulent activities are promptly identified and mitigated.
+
+#### False Positives
+- **Definition**: Transactions that are legitimate but are incorrectly classified as fraudulent.
+- **Impact**: Blocking legitimate customers can lead to dissatisfaction, loss of customer trust, and potential financial loss due to interrupted transactions.
+- **Considerations**: Reducing false positives is essential to maintain a smooth customer experience and prevent legitimate users from being mistakenly flagged.
+
+### Trade-off Management
+
+Evaluating models for fraud detection involves managing the trade-off between false negatives and false positives. The key metrics used in this stage, such as the balanced accuracy, Cohen's Kappa score, F1 score, and ROC_AUC, help in assessing this trade-off:
+
+- **Balanced Accuracy**: Accounts for both types of errors, providing a more comprehensive view of model performance.
+- **Cohen's Kappa Score**: Measures the agreement between predicted and actual classifications, considering the possibility of chance agreements.
+- **F1 Score**: Balances precision (minimizing false positives) and recall (minimizing false negatives), offering a single metric to evaluate overall performance.
+- **ROC_AUC**: Provides insight into the trade-off between the true positive rate and the false positive rate across different threshold settings.
+
+![image](https://github.com/user-attachments/assets/93cacabc-1411-4e01-a005-5c3e9e56f0a3)
 
 ## Conclusion
 In this solution, we cover data investigation, unsupervised anomaly detection, and multiple supervised learning techniques to build a robust credit card fraud detection system. By leveraging SageMaker's capabilities, we streamline the training, deployment, and evaluation processes to achieve optimal model performance.
