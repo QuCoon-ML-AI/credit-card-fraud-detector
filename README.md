@@ -1,7 +1,7 @@
 # Credit Card Fraud Detector
 
 ## Overview
-The Credit Card Fraud Detector project aims to identify fraudulent credit card transactions using advanced machine learning techniques. This solution leverages AWS SageMaker to build and deploy models that can recognize patterns and anomalies in transaction data, enhancing the security of credit card transactions and reducing financial losses.
+This project aims to identify fraudulent credit card transactions using advanced machine learning techniques. This solution leverages AWS SageMaker to build and deploy models that can recognize patterns and anomalies in transaction data, enhancing the security of credit card transactions and reducing financial losses.
 
 ## Project Definition
 In this solution, we build the core of a credit card fraud detection system using SageMaker. We start by training an unsupervised anomaly detection algorithm, Random Cut Forest (RCF), and then proceed to train two XGBoost models for supervised training. To deal with the highly imbalanced data common in fraud detection, our first model uses XGBoost's weighting schema, and the second uses a re-sampling technique, SMOTE, for oversampling the rare fraudulent examples. Lastly, we train an optimal XGBoost model with Hyper-parameter Optimization (HPO) to further improve model performance.
