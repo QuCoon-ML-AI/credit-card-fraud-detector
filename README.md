@@ -41,7 +41,7 @@ We evaluate and compare the performances of all models. This step is critical to
 - **Impact**: Blocking legitimate customers can lead to dissatisfaction, loss of customer trust, and potential financial loss due to interrupted transactions.
 - **Considerations**: Reducing false positives is essential to maintain a smooth customer experience and prevent legitimate users from being mistakenly flagged.
 
-### Trade-off Management
+#### Trade-off Management
 
 Evaluating models for fraud detection involves managing the trade-off between false negatives and false positives. The key metrics used in this stage, such as the balanced accuracy, Cohen's Kappa score, F1 score, and ROC_AUC, help in assessing this trade-off:
 
