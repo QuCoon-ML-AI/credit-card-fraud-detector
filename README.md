@@ -18,12 +18,17 @@ The credit card fraud detector solution contains five stages:
 ### Stage I: Investigate and Process the Data
 Set up the environment and process the dataset, which contains only numerical features transformed using PCA to protect user privacy. The dataset contains 28 PCA components (V1-V28), and two features that haven't been transformed: Amount and Time. The class column corresponds to whether a transaction is fraudulent. Given the class imbalance, with only a small fraction of data corresponding to fraudulent examples, we split the dataset into training and testing sets before applying techniques to alleviate class imbalance.
 
+
+## Model Training
+![image](https://github.com/user-attachments/assets/3b787f32-3017-4f1c-be1c-02d6ff562804)
+
 ### Stage II: Train an Unsupervised Random Cut Forest Model
 In a fraud detection scenario, labeling fraudulent examples takes time. Anomaly detection helps identify anomalous examples based solely on their feature characteristics. We fit the RCF model, deploy it, and evaluate its performance in separating fraudulent from legitimate transactions based on anomaly scores. High anomaly scores typically indicate fraudulent transactions.
 
 ### Stage III: Train a XGBoost Model with the Built-in Weighting Schema
 We use a supervised learning algorithm, XGBoost, which discovers relationships between features and the dependent class. By specifying the XGBoost algorithm and using SageMaker's built-in XGBoost containers, we train the model with a focus on scaling the weights of the positive vs. negative class examples. This is crucial in imbalanced datasets to prevent the majority class from dominating the learning.
 
+![image](https://github.com/user-attachments/assets/e77fe8fb-4c45-4fdc-9182-9905a947e2a8)
 ### Stage IV: Train a XGBoost Model with the Over-sampling Technique SMOTE
 To address imbalanced problems, we use the Synthetic Minority Over-sampling Technique (SMOTE), which oversamples the minority class by interpolating new data points. We train the XGBoost model using the SMOTE dataset and evaluate its performance. Adjusting the classification threshold can balance between minimizing false positives and not missing any fraudulent cases.
 
