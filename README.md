@@ -53,12 +53,6 @@ We evaluate and compare the performances of all models. This step is critical to
 
 #### Trade-off Management
 
-Evaluating models for fraud detection involves managing the trade-off between false negatives and false positives. The key metrics used in this stage, such as the balanced accuracy, Cohen's Kappa score, F1 score, and ROC_AUC, help in assessing this trade-off:
-
-- **Balanced Accuracy**: Accounts for both types of errors, providing a more comprehensive view of model performance.
-- **Cohen's Kappa Score**: Measures the agreement between predicted and actual classifications, considering the possibility of chance agreements.
-- **F1 Score**: Balances precision (minimizing false positives) and recall (minimizing false negatives), offering a single metric to evaluate overall performance.
-- **ROC_AUC**: Provides insight into the trade-off between the true positive rate and the false positive rate across different threshold settings.
-
+Evaluating models for fraud detection involves managing the trade-off between false negatives and false positives. The key metrics used in this stage, such as the balanced accuracy, Cohen's Kappa score, F1 score, and ROC_AUC
 ## Conclusion
 In this solution, we cover data investigation, unsupervised anomaly detection, and multiple supervised learning techniques to build a robust credit card fraud detection system. By leveraging SageMaker's capabilities, we streamline the training, deployment, and evaluation processes to achieve optimal model performance.
