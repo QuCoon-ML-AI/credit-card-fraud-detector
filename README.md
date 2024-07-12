@@ -3,10 +3,10 @@
 ## Overview
 This post provides a detailed description of the Credit Card Fraud Detector project, including its purpose, the machine learning models used, and a comprehensive overview of the solution. The project aims to identify fraudulent credit card transactions using advanced machine learning techniques.
 
-## Project Definition and Scope
+## Project Definition
 In this solution, we build the core of a credit card fraud detection system using SageMaker. We start by training an unsupervised anomaly detection algorithm, Random Cut Forest (RCF), and then proceed to train two XGBoost models for supervised training. To deal with the highly imbalanced data common in fraud detection, our first model uses XGBoost's weighting schema, and the second uses a re-sampling technique, SMOTE, for oversampling the rare fraudulent examples. Lastly, we train an optimal XGBoost model with Hyper-parameter Optimization (HPO) to further improve model performance.
 
-![image](https://github.com/user-attachments/assets/5a35ec8f-d82b-43a3-b93e-a9ff1e84be11)
+![WhatsApp Image 2024-07-12 at 09 31 55_7ec784fc](https://github.com/user-attachments/assets/58d06990-97d6-44c4-afb2-1c7bf5bccec5)
 
 ## What is the Credit Card Fraud Detector?
 The Credit Card Fraud Detector is a machine learning-based solution designed to identify fraudulent credit card transactions in real-time. By leveraging historical transaction data, the system can recognize patterns and anomalies that indicate potential fraud. The solution aims to reduce financial losses and enhance the security of credit card transactions.
