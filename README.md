@@ -35,6 +35,9 @@ To address imbalanced problems, we use the Synthetic Minority Over-sampling Tech
 ### Stage V: Train an Optimal XGBoost Model with Hyper-parameter Optimization (HPO)
 We further improve model performance using Hyper-parameter Optimization (HPO). The HPO process selects an optimal model based on performance on validation data. We prepare the input data in CSV format, combine the target variable with feature variables, and upload them to S3 buckets for training.
 
+## Model Evaluation
+![WhatsApp Image 2024-07-12 at 09 32 55_49611bb7](https://github.com/user-attachments/assets/7114465f-af93-4add-ab7f-03e333bae721)
+
 ### Stage VI: Evaluate and Compare All Model Performances
 We evaluate and compare the performances of all models. This step is critical to ensure the effectiveness of the fraud detection system, as it directly impacts both the security and customer experience.
 
@@ -56,8 +59,6 @@ Evaluating models for fraud detection involves managing the trade-off between fa
 - **Cohen's Kappa Score**: Measures the agreement between predicted and actual classifications, considering the possibility of chance agreements.
 - **F1 Score**: Balances precision (minimizing false positives) and recall (minimizing false negatives), offering a single metric to evaluate overall performance.
 - **ROC_AUC**: Provides insight into the trade-off between the true positive rate and the false positive rate across different threshold settings.
-
-![WhatsApp Image 2024-07-12 at 09 32 55_49611bb7](https://github.com/user-attachments/assets/7114465f-af93-4add-ab7f-03e333bae721)
 
 ## Conclusion
 In this solution, we cover data investigation, unsupervised anomaly detection, and multiple supervised learning techniques to build a robust credit card fraud detection system. By leveraging SageMaker's capabilities, we streamline the training, deployment, and evaluation processes to achieve optimal model performance.
