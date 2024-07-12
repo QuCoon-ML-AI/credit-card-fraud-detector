@@ -1,9 +1,7 @@
 # Credit Card Fraud Detector
 
 ## Overview
-This post provides a detailed description of the Credit Card Fraud Detector project, including its purpose, the machine learning models used, and a comprehensive overview of the solution. The project aims to identify fraudulent credit card transactions using advanced machine learning techniques.
-
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/5ed97ae7-ab21-463a-8f5a-32a0e497ede6">
+The Credit Card Fraud Detector project aims to identify fraudulent credit card transactions using advanced machine learning techniques. This solution leverages AWS SageMaker to build and deploy models that can recognize patterns and anomalies in transaction data, enhancing the security of credit card transactions and reducing financial losses.
 
 ## Project Definition
 In this solution, we build the core of a credit card fraud detection system using SageMaker. We start by training an unsupervised anomaly detection algorithm, Random Cut Forest (RCF), and then proceed to train two XGBoost models for supervised training. To deal with the highly imbalanced data common in fraud detection, our first model uses XGBoost's weighting schema, and the second uses a re-sampling technique, SMOTE, for oversampling the rare fraudulent examples. Lastly, we train an optimal XGBoost model with Hyper-parameter Optimization (HPO) to further improve model performance.
@@ -12,6 +10,8 @@ In this solution, we build the core of a credit card fraud detection system usin
 
 ## What is the Credit Card Fraud Detector?
 The Credit Card Fraud Detector is a machine learning-based solution designed to identify fraudulent credit card transactions in real-time. By leveraging historical transaction data, the system can recognize patterns and anomalies that indicate potential fraud. The solution aims to reduce financial losses and enhance the security of credit card transactions.
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/5ed97ae7-ab21-463a-8f5a-32a0e497ede6">
 
 The credit card fraud detector solution contains five stages:
 
