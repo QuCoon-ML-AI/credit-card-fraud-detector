@@ -50,7 +50,7 @@ Evaluating models for fraud detection involves managing the trade-off between fa
 - **F1 Score**: Balances precision (minimizing false positives) and recall (minimizing false negatives), offering a single metric to evaluate overall performance.
 - **ROC_AUC**: Provides insight into the trade-off between the true positive rate and the false positive rate across different threshold settings.
 
-![image](https://github.com/user-attachments/assets/93cacabc-1411-4e01-a005-5c3e9e56f0a3)
+![WhatsApp Image 2024-07-12 at 09 32 55_49611bb7](https://github.com/user-attachments/assets/7114465f-af93-4add-ab7f-03e333bae721)
 
 ## Conclusion
 In this solution, we cover data investigation, unsupervised anomaly detection, and multiple supervised learning techniques to build a robust credit card fraud detection system. By leveraging SageMaker's capabilities, we streamline the training, deployment, and evaluation processes to achieve optimal model performance.
