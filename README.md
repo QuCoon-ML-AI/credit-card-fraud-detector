@@ -6,6 +6,8 @@ This post provides a detailed description of the Credit Card Fraud Detector proj
 ## Project Definition and Scope
 In this solution, we build the core of a credit card fraud detection system using SageMaker. We start by training an unsupervised anomaly detection algorithm, Random Cut Forest (RCF), and then proceed to train two XGBoost models for supervised training. To deal with the highly imbalanced data common in fraud detection, our first model uses XGBoost's weighting schema, and the second uses a re-sampling technique, SMOTE, for oversampling the rare fraudulent examples. Lastly, we train an optimal XGBoost model with Hyper-parameter Optimization (HPO) to further improve model performance.
 
+![WhatsApp Image 2024-07-12 at 09 31 55_edea7d8e](https://github.com/user-attachments/assets/ca01ab6a-c121-4eec-8a4a-495750fc2911)
+
 ## What is the Credit Card Fraud Detector?
 The Credit Card Fraud Detector is a machine learning-based solution designed to identify fraudulent credit card transactions in real-time. By leveraging historical transaction data, the system can recognize patterns and anomalies that indicate potential fraud. The solution aims to reduce financial losses and enhance the security of credit card transactions.
 
@@ -13,8 +15,6 @@ The credit card fraud detector solution contains five stages:
 
 ### Stage I: Investigate and Process the Data
 Set up the environment and process the dataset, which contains only numerical features transformed using PCA to protect user privacy. The dataset contains 28 PCA components (V1-V28), and two features that haven't been transformed: Amount and Time. The class column corresponds to whether a transaction is fraudulent. Given the class imbalance, with only a small fraction of data corresponding to fraudulent examples, we split the dataset into training and testing sets before applying techniques to alleviate class imbalance.
-
-![WhatsApp Image 2024-07-12 at 09 31 55_edea7d8e](https://github.com/user-attachments/assets/ca01ab6a-c121-4eec-8a4a-495750fc2911)
 
 ### Stage II: Train an Unsupervised Random Cut Forest Model
 In a fraud detection scenario, labeling fraudulent examples takes time. Anomaly detection helps identify anomalous examples based solely on their feature characteristics. We fit the RCF model, deploy it, and evaluate its performance in separating fraudulent from legitimate transactions based on anomaly scores. High anomaly scores typically indicate fraudulent transactions.
